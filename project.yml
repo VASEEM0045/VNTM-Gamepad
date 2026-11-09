@@ -1,0 +1,36 @@
+name: VNTMGamepad
+options:
+  bundleIdPrefix: com.vntm
+  deploymentTarget:
+    iOS: "15.0"
+  xcodeVersion: "15.0"
+settings:
+  base:
+    TARGETED_DEVICE_FAMILY: 1
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: 1
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_IDENTITY: ""
+    CODE_SIGN_STYLE: Manual
+    INFOPLIST_FILE: VNTMGamepad/Info.plist
+targets:
+  VNTMGamepad:
+    type: application
+    platform: iOS
+    sources:
+      - path: VNTMGamepad
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.vntm.gamepad
+        INFOPLIST_FILE: VNTMGamepad/Info.plist
+        CODE_SIGN_ENTITLEMENTS: VNTMGamepad/VNTMGamepad.entitlements
+    info:
+      path: VNTMGamepad/Info.plist
+  VNTMGamepadTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: VNTMGamepadTests
+    dependencies:
+      - target: VNTMGamepad
